@@ -24,5 +24,5 @@ if (mysqli_num_rows($res) > 0) {
 }
 
 mysqli_close($con);
-echo json_encode($response); // Convertimos la respuesta a JSON antes de devolverla
+echo json_encode($res); // Convertimos la respuesta a JSON antes de devolverla
 ?>
