@@ -15,7 +15,7 @@ if ($conn->connect_error) {
     die("La conexión ha fallado: " . $conn->connect_error);
 }
 
-$idtarea = $json->idusuario;
+$idtarea = $json->idtarea;
 $prioridad = $json->prioridad;
 $tarea = $json->tarea;
 $fecha_limite = $json->fecha_limite;
