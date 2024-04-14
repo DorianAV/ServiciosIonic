@@ -10,7 +10,7 @@ $idusuario = $_GET['idusuario'];
 $con = mysqli_connect('localhost', 'root', '2004', 'ionic');
 
 
-$sql = "SELECT * FROM tareas where idusuario='$idusuario'";
+$sql = "SELECT * FROM tareas where idusuario='$idusuario' and completado=0" ;
 
 $result = mysqli_query($con,$sql);
 
