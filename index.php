@@ -7,7 +7,7 @@ header("Access-Control-Allow-Origin: *");
 $idusuario = $_GET['idusuario'];
 
 
-$con = mysqli_connect('localhost', 'root', '2004', 'ionic');
+$con = mysqli_connect('dorian-server.mysql.database.azure.com', 'sifsgliims', 'Tb59I$a7up5qLihv', 'ionic');
 
 
 $sql = "SELECT * FROM tareas where idusuario='$idusuario'";
