@@ -17,12 +17,12 @@ $correo = $_GET['correo'];
 $sql = "SELECT * FROM usuarios WHERE correo='$correo'";
 $con = mysqli_connect('localhost', 'root', '2004', 'ionic');
 $res = mysqli_query($con, $sql);
-$response = false; // Inicializamos la respuesta como false
+$response = false;
 
 if (mysqli_num_rows($res) > 0) {
-    $response = true; // Si hay resultados, el correo existe en la base de datos
+    $response = true;
 }
 
 mysqli_close($con);
-echo $response;
+echo $correo;
 ?>
