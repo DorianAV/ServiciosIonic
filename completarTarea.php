@@ -18,7 +18,7 @@ if ($conn->connect_error) {
 
 $idtarea = $_GET['idtarea'];
 
-$sql = "UPDATE FROM tareas SET completado=1 WHERE idtarea = '$idtarea'";
+$sql = "UPDATE tareas SET completado=1 WHERE idtarea = '$idtarea'";
 
 $res = mysqli_query($conn,$sql);
 echo json_encode($res);
