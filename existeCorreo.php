@@ -10,19 +10,19 @@ header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
 // Permitir cookies a través de la API
-header("Access-Control-Allow-Credentials: true");$correo = $_GET['correo'];
+header("Access-Control-Allow-Credentials: true");
 
+$correo = $_GET['correo'];
 
-$sql="SELECT * FROM usuarios WHERE correo='$correo'";
+$sql = "SELECT * FROM usuarios WHERE correo='$correo'";
 $con = mysqli_connect('localhost', 'root', '2004', 'ionic');
 $res = mysqli_query($con, $sql);
-$response = array();
+$response = false; // Inicializamos la respuesta como false
+
 if (mysqli_num_rows($res) > 0) {
-    $row = mysqli_fetch_assoc($res);
-    $response = true;
-} else {
-    $response = false;
+    $response = true; // Si hay resultados, el correo existe en la base de datos
 }
+
 mysqli_close($con);
-echo $response;
+echo json_encode($response); // Convertimos la respuesta a JSON antes de devolverla
 ?>
