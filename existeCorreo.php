@@ -11,11 +11,13 @@ $sql = "SELECT * FROM usuarios WHERE correo='$correo'";
 $con = mysqli_connect('localhost', 'root', '2004', 'ionic');
 $res = mysqli_query($con, $sql);
 
-if(mysqli_num_rows($res) > 0) {
-    echo 'true';
-} else {
-    echo 'false';
-}
+$result = mysqli_query($con,$sql);
 
-mysqli_close($con);
-?>
+$lista = array();
+
+while($row = mysqli_fetch_array($result)) {
+    $lista[] = $row;
+}
+echo json_encode($lista);
+
+$con->close();
