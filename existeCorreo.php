@@ -19,5 +19,5 @@ while($row = mysqli_fetch_array($result)) {
     $lista[] = $row;
 }
 echo json_encode($lista);
-
+echo $correo;
 $con->close();
