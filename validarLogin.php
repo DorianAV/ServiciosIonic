@@ -14,7 +14,7 @@ $correo = $_GET['correo'];
 $password = $_GET['password'];
 
 $sql = "SELECT * FROM usuarios WHERE correo='$correo' AND password='$password'";
-$con = mysqli_connect('localhost', 'root', '2004', 'ionic');
+$con = mysqli_connect('localhost', 'sifsgliims', 'Tb59I$a7up5qLihv', 'ionic');
 $res = mysqli_query($con, $sql);
 $response = array();
 if (mysqli_num_rows($res) > 0) {
