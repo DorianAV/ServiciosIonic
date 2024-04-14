@@ -19,7 +19,14 @@ $idtarea = $_GET['idtarea'];
 
 $sql = "select * from tareas where idtarea='$idtarea'";
 
-$res = mysqli_query($conn,$sql);
-echo json_encode($res);
+$result = mysqli_query($conn,$sql);
+
+$lista = array();
+
+while($row = mysqli_fetch_array($result)) {
+    $lista[] = $row;
+}
+echo json_encode($lista);
+
 $conn->close();
 
