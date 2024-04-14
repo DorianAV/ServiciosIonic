@@ -1,6 +1,15 @@
 <?php
+// Permitir el acceso desde cualquier origen
 header("Access-Control-Allow-Origin: *");
 
+// Permitir ciertos métodos HTTP
+header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+
+// Permitir ciertos encabezados HTTP
+header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
+
+// Permitir cookies a través de la API
+header("Access-Control-Allow-Credentials: true");
 $correo = $_GET['correo'];
 $password = $_GET['password'];
 
